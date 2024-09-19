@@ -1,0 +1,81 @@
+mysql> show databases;
+use final_project;
+
+mysql> create table Autorization(
+    -> ID int not null primary key,
+    -> LOGIN varchar(30),
+    -> PASSWORD varchar (30)
+    -> );
+
+mysql> CREATE TABLE Users (
+    -> ID  INT NOT NULL PRIMARY KEY,
+    -> NAME VARCHAR(50),
+    -> I_ID INT,
+    -> FOREIGN KEY Users (I_ID) REFERENCES Autorization (ID)
+    -> );
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> CREATE TABLE Balance(
+    -> ID_BALANCE INT NOT NULL primary key,
+    -> BALANCE INT,
+    -> BALANCE_USERS INT,
+    -> FOREIGN KEY Balance(BALANCE_USERS) REFERENCES Users(ID)
+    -> );
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> CREATE TABLE Massage(
+    -> MESSAGE TEXT,
+    -> ID INT,
+    -> FOREIGN KEY Massage(ID) REFERENCES Balance(ID_BALANCE)
+    -> );
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> SHOW TABLES;
++-------------------------+
+| Tables_in_final_project |
++-------------------------+
+| autorization            |
+| balance                 |
+| massage                 |
+| users                   |
++-------------------------+
+4 rows in set (0.01 sec)
+
+mysql> INSERT INTO autorization (ID, LOGIN,PASSWORD) VALUES (1, 'DARINA', 'QWERTY1'), (2, 'TAMARA', 'QWERTY2'), (3, 'EGOR', 'QWERTY3');
+mysql> INSERT INTO USERS (ID, NAME, I_ID) VALUES (1, 'DARINA', 1), (2, 'TAMARA', 2), (3, 'EGOR', 3);
+mysql> INSERT INTO BALANCE( ID_BALANCE, BALANCE, BALANCE_USERS) VALUES (1, 10000, 1), (2, 20000, 2), (3, 30000,3);
+mysql> INSERT INTO massage (ID, message) VALUES(1,'THE CARD IS BLOCKED'), (2,'INCORRECT PINCODE');
+
+mysql> SELECT * FROM  autorization;
++----+--------+----------+
+| ID | LOGIN  | PASSWORD |
++----+--------+----------+
+|  1 | DARINA | QWERTY1  |
+|  2 | TAMARA | QWERTY2  |
+|  3 | EGOR   | QWERTY3  |
++----+--------+----------+
+
+mysql> SELECT * FROM  balance;
++------------+---------+---------------+
+| ID_BALANCE | BALANCE | BALANCE_USERS |
++------------+---------+---------------+
+|          1 |   10000 |             1 |
+|          2 |   20000 |             2 |
+|          3 |   30000 |             3 |
++------------+---------+---------------+
+
+mysql> SELECT * FROM  users;
++----+--------+------+
+| ID | NAME   | I_ID |
++----+--------+------+
+|  1 | DARINA |    1 |
+|  2 | TAMARA |    2 |
+|  3 | EGOR   |    3 |
++----+--------+------+
+
+mysql> SELECT * FROM  massage;
++---------------------+------+
+| MESSAGE             | ID   |
++---------------------+------+
+| THE CARD IS BLOCKED |    1 |
+| INCORRECT PINCODE   |    2 ;
