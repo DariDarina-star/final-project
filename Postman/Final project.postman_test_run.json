@@ -1,0 +1,152 @@
+{
+	"id": "ef627e72-c884-427e-9b8a-2bca62bfa0d0",
+	"name": "Final project",
+	"timestamp": "2024-09-23T17:40:17.604Z",
+	"collection_id": "0-c109efb6-728e-4fc8-98af-bf8ce6ecad8d",
+	"folder_id": 0,
+	"environment_id": "992acb61-f7db-44e4-9f0d-4767c15319d7",
+	"totalPass": 3,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "a4cd66c3-81ce-4f0e-be4d-b550b2d177f5",
+			"name": "user/createWithList",
+			"url": "https://petstore.swagger.io/v2/user/createWithList?URL=https://petstore.swagger.io/",
+			"time": 890,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				890
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "2899d181-bf8c-4151-88d8-5bc19550dea2",
+			"name": "/user/AAA",
+			"url": "https://petstore.swagger.io/v2/user/AAA",
+			"time": 164,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"SET переменной": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"SET переменной": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				164
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"SET переменной": true
+				}
+			]
+		},
+		{
+			"id": "80dd86c8-5c11-4fb6-b175-61d22bd6a37e",
+			"name": "user/AAA1",
+			"url": "https://petstore.swagger.io/v2/user/AAA",
+			"time": 133,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				133
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "5487c8de-28b1-4dbb-a937-2e562515c307",
+			"name": "/user/AAA",
+			"url": "https://petstore.swagger.io/v2/user/9223372036854764925",
+			"time": 141,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				141
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "419a3b53-824e-42b0-a568-295940b8b29d",
+			"name": "проверка DEL",
+			"url": "https://petstore.swagger.io/v2/user/9223372036854764925",
+			"time": 120,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				120
+			],
+			"allTests": [
+				{}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 1448,
+	"collection": {
+		"requests": [
+			{
+				"id": "a4cd66c3-81ce-4f0e-be4d-b550b2d177f5",
+				"method": "POST"
+			},
+			{
+				"id": "2899d181-bf8c-4151-88d8-5bc19550dea2",
+				"method": "GET"
+			},
+			{
+				"id": "80dd86c8-5c11-4fb6-b175-61d22bd6a37e",
+				"method": "PUT"
+			},
+			{
+				"id": "5487c8de-28b1-4dbb-a937-2e562515c307",
+				"method": "DELETE"
+			},
+			{
+				"id": "419a3b53-824e-42b0-a568-295940b8b29d",
+				"method": "GET"
+			}
+		]
+	}
+}

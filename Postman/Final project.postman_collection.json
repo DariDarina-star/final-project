@@ -1,0 +1,202 @@
+{
+	"info": {
+		"_postman_id": "c109efb6-728e-4fc8-98af-bf8ce6ecad8d",
+		"name": "Final project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "user/createWithList",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n  {\r\n    \"id\": 0,\r\n    \"username\": \"AAA\",\r\n    \"firstName\": \"BBB\",\r\n    \"lastName\": \"CCC\",\r\n    \"email\": \"DDD@MAIL\",\r\n    \"password\": \"QWERTY\",\r\n    \"phone\": \"1234567\",\r\n    \"userStatus\": 0\r\n  }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://petstore.swagger.io/v2/user/createWithList?URL=https://petstore.swagger.io/",
+					"protocol": "https",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"user",
+						"createWithList"
+					],
+					"query": [
+						{
+							"key": "URL",
+							"value": "https://petstore.swagger.io/"
+						},
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/user/AAA",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"SET переменной\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    //console.log('Наш jsonData', jsonData.id)\r",
+							"  pm.environment.unset(\"ID\", jsonData.id);\r",
+							"    //pm.expect(jsonData.value).to.eql(100);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://petstore.swagger.io/v2/user/AAA",
+					"protocol": "https",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"user",
+						"AAA"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user/AAA1",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 9223372036854764925,\r\n  \"username\": \"AAA1\",\r\n  \"firstName\": \"BBB\",\r\n  \"lastName\": \"CCC\",\r\n  \"email\": \"DDD@MAIL\",\r\n  \"password\": \"QWERTY\",\r\n  \"phone\": \"1234567\",\r\n  \"userStatus\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://petstore.swagger.io/v2/user/AAA",
+					"protocol": "https",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"user",
+						"AAA"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/user/AAA",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://petstore.swagger.io/v2/user/9223372036854764925",
+					"protocol": "https",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"user",
+						"9223372036854764925"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "проверка DEL",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://petstore.swagger.io/v2/user/9223372036854764925",
+					"protocol": "https",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"user",
+						"9223372036854764925"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
