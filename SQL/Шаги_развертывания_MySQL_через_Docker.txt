@@ -1,0 +1,25 @@
+1) Запуск Docker
+
+2) Запустить MySQL контейнер: docker run --name mysql-container -e MYSQL_ROOT_PASSWORD=my-secret-pw -d -p 3306:3306 mysql:latest
+Параметры команды:
+--name mysql-container: задает имя контейнера (вы можете выбрать любое имя).
+-e MYSQL_ROOT_PASSWORD=my-secret-pw: устанавливает пароль для пользователя root (замените my-secret-pw на желаемый пароль).
+-d: запускает контейнер в фоновом режиме.
+-p 3306:3306: пробрасывает порт 3306 контейнера на порт 3306 вашего компьютера.
+mysql:latest: указывает использовать последнюю версию образа MySQL.
+
+3)Чтобы проверить, работает ли ваш контейнер, выполнить команду: docker ps
+
+4)Подключение к MySQL: docker exec -it mysql-container mysql -u root -p
+
+5) Остановка и удаление контейнера
+Чтобы остановить контейнер, выполните:docker stop mysql-container
+Чтобы удалить контейнер, выполните:docker rm mysql-container
+
+Примечание: Что если контейнер с именем mysql-container уже существует. Чтобы решить эту проблему, вы можете сделать следующее:
+
+1. Удалите существующий контейнер
+Если вы не планируете использовать старый контейнер, вы можете удалить его: docker rm mysql-container
+Запустите новый контейнер, после удаления контейнера вы можете снова запустить команду:docker run --name mysql-container -e MYSQL_ROOT_PASSWORD=my-secret-pw -d -p 3306:3306 mysql:latest
+
+2. Если вы хотите сохранить старый контейнер, вы можете переименовать его: docker rename mysql-container mysql-container-old
